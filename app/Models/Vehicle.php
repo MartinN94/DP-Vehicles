@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\SearchTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -12,8 +13,10 @@ class Vehicle extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
+    use SearchTrait;
 
     protected $fillable = ['user_id', 'price', 'currency', 'price_type', 'sold', 'arriving', 'available','year_id','make_id', 'type_id', 'sku_id', 'store_id', 'description', 'category_id'];
+    
 
     public function year(){
         return $this->belongsTo(Year::class, 'year_id', 'id');

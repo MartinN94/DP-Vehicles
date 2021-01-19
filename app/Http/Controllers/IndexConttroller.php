@@ -30,4 +30,19 @@ class IndexConttroller extends Controller
 
         return view('site.show', compact('vehicle'));
     }
+
+    // FILTER FUNCTION NOT FINISHED
+    public function filter(Request $request){
+       
+        $this->validate($request, [
+            'keyword' => "required",
+            'group' => 'required',
+            'subgroup' => 'required'
+        ]);
+
+        $vehicles = Vehicle::search($request->keyword)->with('year', 'maker', 'model', 'sku', 'store', 'tags', 'features')->paginate(5);
+        
+        return view('site.index', compact('vehicles'));
+        
+    }
 }

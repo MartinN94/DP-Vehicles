@@ -22,6 +22,8 @@ Route::get('/', [IndexConttroller::class, 'index'])
 
 Route::get('/view/{id}', [IndexConttroller::class, 'show']);
 
+Route::post('/', [IndexConttroller::class, 'filter']);
+
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/profile', [ProfileController::class, 'index'])

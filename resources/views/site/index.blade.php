@@ -6,10 +6,39 @@
     <div class="container">
             <div class=" bg-dark border-b border-gray-200 my-4">
              <div class="row p-3">
-                <div class="col-10">
-                    <h5 class="card-title text-light">My vehicles list:</h5>
-                </div>
-                <div class="col-2">
+                <div class="col-12">
+                    <form action="{{ url('/') }}" method="post">
+                        @csrf
+                        @method('POST')
+                            <div class="row justify-content-center">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="keyword" placeholder="Enter keyword" value="{{ old('keyword') }}">
+                                      </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <select class="form-control" name="group" id="group">
+                                            <option disabled selected >Choose type</option>
+                                            <option value="details">Details</option>
+                                            <option value="meta">Meta</option>
+                                            <option value="store">Store</option>
+                                            <option value="category">Category</option>
+                                          </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <select class="form-control subgroup" name="subgroup">
+                                            <option disabled selected>Choose type</option>
+                                          </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary btn-block" >Filter</button>
+                                </div>
+                            </div>
+                    </form>
                 </div>
             </div>
             </div>
