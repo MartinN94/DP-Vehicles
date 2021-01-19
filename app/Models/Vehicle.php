@@ -64,8 +64,4 @@ class Vehicle extends Model implements HasMedia
         return $this;
     }
 
-    public function getContentVisual($index){
-        return $this->media()->whereCollectionName('images')->where('custom_properties->index', $index)->first();
-    }
-
 }

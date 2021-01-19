@@ -23,7 +23,7 @@
                                 <div class="col-10">
                                     <div class="row">
                                         <div class="col-4">
-                                            <img src="{{ $vehicle->getContentVisual(0)->getUrl() }}" class="img-thumbnail rounded">
+                                            <img src="{{ $vehicle->getFirstMediaUrl('images') }}" class="img-thumbnail rounded">
                                         </div>
                                         <div class="col-8">
                                             <h3 class="font-weight-bold">Vehicle: {{ $vehicle->maker->name }} {{ $vehicle->model->name }} - {{ $vehicle->year->year }}</h3>
