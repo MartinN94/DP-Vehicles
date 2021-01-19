@@ -35,13 +35,13 @@ In order to use the app and access the admin panel, do these steps:
 
 10. If you are using Ubuntu or Mac install optimizers for media package
     - Ubuntu:   
-        sudo apt install jpegoptim optipng pngquant gifsicle
-        pm install -g svgo
+        * sudo apt install jpegoptim optipng pngquant gifsicle
+        * pm install -g svgo
         
-    -Mac:
-        brew install jpegoptim
-        brew install optipng
-        brew install pngquant
-        brew install svgo
-        brew install gifsicle
+    - Mac:
+        * brew install jpegoptim
+        * brew install optipng
+        * brew install pngquant
+        * brew install svgo
+        * brew install gifsicle
 
