@@ -8,6 +8,8 @@ In order to use the app and access the admin panel, do these steps:
 
 3. Open your database manager and manually fill the user.role field with "admin".
 
+4. After giving admin role, admin should create optional features, categories & tags. (Other users can't create vehicle due to requirement of these fields.)
+
 ## Project installation steps
 
 1. Clone the repo to your local pc
