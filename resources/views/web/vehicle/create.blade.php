@@ -25,9 +25,9 @@
                                 <div class="form-group">
                                     <select class="form-control" name="currency">
                                         <option disabled selected>Choose currency</option>
-                                        <option value="eur">EUR</option>
-                                        <option value="usd">USD</option>
-                                        <option value="mkd">MKD</option>
+                                        <option value="eur" {{ old('currency') == 'eur' ? 'selected' : '' }}>EUR</option>
+                                        <option value="usd" {{ old('currency') == 'usd' ? 'selected' : '' }}>USD</option>
+                                        <option value="mkd" {{ old('currency') == 'mkd' ? 'selected' : '' }}>MKD</option>
                                       </select>
                                 </div>
                             </div>
@@ -35,8 +35,8 @@
                                 <div class="form-group">
                                     <select class="form-control" name="price_type">
                                         <option disabled selected>Choose type</option>
-                                        <option value="regular">Regular</option>
-                                        <option value="sale">Sale</option>
+                                        <option value="regular" {{ old('price_type') == 'regular' ? 'selected' : '' }}>Regular</option>
+                                        <option value="sale" {{ old('price_type') == 'sale' ? 'selected' : '' }}>Sale</option>
                                       </select>
                                 </div>
                             </div>
@@ -46,13 +46,13 @@
                             <div class="col">
                                 <label for="">Sold</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" name="sold">
+                                    <input class="form-check-input" type="checkbox" value="1" name="sold" {{ old('sold') == '1' ? 'checked' : '' }}>
                                     <label class="form-check-label">
                                       Yes
                                     </label>
                                   </div>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="0" name="sold">
+                                    <input class="form-check-input" type="checkbox" value="0" name="sold" {{ old('sold') == '0' ? 'checked' : '' }}>
                                     <label class="form-check-label">
                                       No
                                     </label>
@@ -61,13 +61,13 @@
                             <div class="col">
                                 <label for="">Arriving soon</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" name="arriving">
+                                    <input class="form-check-input" type="checkbox" value="1" name="arriving" {{ old('arriving') == '1' ? 'checked' : '' }}>
                                     <label class="form-check-label">
                                       Yes
                                     </label>
                                   </div>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="0" name="arriving">
+                                    <input class="form-check-input" type="checkbox" value="0" name="arriving" {{ old('arriving') == '0' ? 'checked' : '' }}>
                                     <label class="form-check-label">
                                       No
                                     </label>
@@ -76,13 +76,13 @@
                             <div class="col">
                                 <label for="">Available</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="1" name="available">
+                                    <input class="form-check-input" type="checkbox" value="1" name="available" {{ old('available') == '1' ? 'checked' : '' }}>
                                     <label class="form-check-label">
                                       Yes
                                     </label>
                                   </div>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="0" name="available">
+                                    <input class="form-check-input" type="checkbox" value="0" name="available" {{ old('available') == '0' ? 'checked' : '' }}>
                                     <label class="form-check-label">
                                       No
                                     </label>
@@ -98,7 +98,7 @@
                                     <select class="form-control" name="year">
                                         <option disabled selected>Choose year</option>
                                         @foreach (App\Models\Year::all() as $item)
-                                        <option value="{{ $item->id }}">{{ $item->year }}</option>
+                                        <option value="{{ $item->id }}" {{ old('year') == $item->id ? 'selected' : '' }}>{{ $item->year }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -120,7 +120,7 @@
                                     <select class="form-control" name="maker">
                                         <option disabled selected>Choose manifacturer</option>
                                         @foreach (App\Models\Make::all() as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}" {{ old('maker') == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -142,7 +142,7 @@
                                     <select class="form-control" name="model">
                                         <option disabled selected>Choose model</option>
                                         @foreach (App\Models\Type::all() as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}" {{ old('model') == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -164,7 +164,7 @@
                                     <select class="form-control" name="sku">
                                         <option disabled selected>Choose model</option>
                                         @foreach (App\Models\Sku::all() as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}" {{ old('sku') == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -184,7 +184,7 @@
                             <select class="form-control" name="store">
                                 <option disabled selected>Choose store</option>
                                 @foreach (App\Models\Store::all() as $item)
-                                <option value="{{ $item->id }}">{{ $item->name }} / {{ $item->location }}</option>
+                                <option value="{{ $item->id }}" {{ old('store') == $item->id ? 'selected' : '' }}>{{ $item->name }} / {{ $item->location }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -209,14 +209,14 @@
                         </div>
                         <label for="images" class="font-weight-bold">Images</label>
                         <div class="form-group">
-                            <input type="file" id="file-input" name="images[]" multiple/> 
+                            <input type="file" id="file-input" name="images[]" multiple value="{{ old('images[]') }}"/> 
                         </div>
                         <div class="form-group">
                             <label for="category" class="font-weight-bold">Category</label>
                             <select class="form-control" name="category">
                                 <option disabled selected>Choose category</option>
                                 @foreach (App\Models\Category::all() as $item)
-                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                <option value="{{ $item->id }}" {{ old('category') == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -226,7 +226,7 @@
                                     <label for="features" class="font-weight-bold">Optional features</label>
                                     <select class="form-control features-select" multiple="true" name="feature[]">
                                         @foreach (App\Models\Optional::all() as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}" {{ old('feature[]') == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -236,7 +236,7 @@
                                     <label for="tags" class="font-weight-bold">Tags</label>
                                     <select class="form-control tags-select" multiple="true" name="tag[]">
                                         @foreach (App\Models\Tag::all() as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}" {{ old('tag[]') == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

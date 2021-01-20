@@ -44,4 +44,3 @@ In order to use the app and access the admin panel, do these steps:
         * brew install pngquant
         * brew install svgo
         * brew install gifsicle
-
