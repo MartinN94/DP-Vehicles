@@ -69,7 +69,6 @@
                         var selectValues = {
                             "price": "Price",
                             "description": "Description",
-                            "status": "Status"
                             };
                             var $mySelect = $(".subgroup");
                             $mySelect.empty();
@@ -85,8 +84,8 @@
                     if (gropValue == 'meta') {
                         var selectValues = {
                             "year": "Year",
-                            "description": "Make",
-                            "status": "Model",
+                            "make": "Make",
+                            "model": "Model",
                             "sku": "SKU",
                             };
                             var $mySelect = $(".subgroup");
