@@ -1,3 +1,9 @@
+## TO BE ABLE TO RETRIVE SAVED MEDIA YOU SHOULD CONFIGURE 'APP_URL' in .env
+
+    - If using Laravel Valet, after cloning and entering command valet link,  url is https://dp-vehicles.test
+    
+    - If using Homestead, your configured url
+
 ## Admin role
 
 In order to use the app and access the admin panel, do these steps:
