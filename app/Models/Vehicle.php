@@ -54,7 +54,7 @@ class Vehicle extends Model implements HasMedia
     {
         $images = $request->validate([
             'images.*' => 'nullable|max:10240',
-            'images' => 'required|max:5'
+            'images' => 'max:5'
           
         ]);
   
