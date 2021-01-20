@@ -159,7 +159,7 @@
                             <div class="col-5">
                                 <div class="form-group">
                                     <select class="form-control" name="sku">
-                                        <option disabled selected>Choose model</option>
+                                        <option disabled selected>Choose SKU</option>
                                         @foreach (App\Models\Sku::all() as $item)
                                         <option value="{{ $item->id }}" {{ $vehicle->sku->id === $item->id  ? 'selected' : '' }}>{{ $item->name }}</option>
                                         @endforeach
@@ -213,7 +213,7 @@
                             <select class="form-control" name="category">
                                 <option disabled selected>Choose category</option>
                                 @foreach (App\Models\Category::all() as $item)
-                                <option value="{{ $item->id }}" {{ $vehicle->category === $item->id  ? 'selected' : '' }}>{{ $item->name }}</option>
+                                <option value="{{ $item->id }}" {{ $vehicle->category->id === $item->id  ? 'selected' : '' }}>{{ $item->name }}</option>
                                 @endforeach
                             </select>
                         </div>
